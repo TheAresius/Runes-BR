@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+  <script src="rune.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <title>Calculadora de Runas - Grand Chase</title>
+</head>
+
+<body>
+    <div class ="main_frame">
+        <div class = "title">
+            Grand Chase<br>Calculadora de Runas
+        </div>
+
+        <div class = "runes">
+            <div class = "rune_image" oncontextmenu="return false;">
+                <div class="image_container">
+                    <img src="images/runes/circle.png" onclick="FormatSelect(0, this, 'images/select_runes/circle.png')">
+                    <img class="overlay_image" src="images\overlay_runes\circle.png">
+                    <img class="clicked_image" src="images\select_runes\circle.png">
+                </div>
+                
+            </div>
+
+
+            <div class = "rune_image" oncontextmenu="return false;">
+                <div class="image_container">
+                    <img src="images\runes\triangle.png" onclick="FormatSelect(1, this, 'images/select_runes/triangle.png')">
+                    <img class="overlay_image" src="images\overlay_runes\triangle.png">
+                    <img class="clicked_image" src="images\select_runes\triangle.png">
+                </div>
+                
+            </div>
+
+
+            <div class = "rune_image" oncontextmenu="return false;">
+                <div class="image_container">
+                    <img src="images\runes\rhombus.png" onclick="FormatSelect(2, this, 'images/select_runes/rhombus.png')">
+                    <img class="overlay_image" src="images\overlay_runes\rhombus.png">
+                    <img class="clicked_image" src="images\select_runes\rhombus.png">
+                </div>
+            </div>
+
+
+            <div class = "rune_image" oncontextmenu="return false;">
+                <div class="image_container">
+                    <img src="images\runes\pentagon.png" onclick="FormatSelect(3, this, 'images/select_runes/pentagon.png')">
+                    <img class="overlay_image" src="images\overlay_runes\pentagon.png">
+                    <img class="clicked_image" src="images\select_runes\pentagon.png">
+                </div>
+            </div>
+
+
+            <div class = "rune_image" oncontextmenu="return false;">
+                <div class="image_container">
+                    <img src="images\runes\hexagon_correct.png" onclick="FormatSelect(4, this, 'images/select_runes/hexagon_correct.png')">
+                    <img class="overlay_image" src="images\overlay_runes\hexagon_correct.png">
+                    <img class="clicked_image" src="images\select_runes\hexagon_correct.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="tier">
+            <button class="tier_container" onclick="TierSelect(0)">T1</button>
+            <button class="tier_container" onclick="TierSelect(1)">T2</button>
+            <button class="tier_container" onclick="TierSelect(2)">T3</button>
+            <button class="tier_container" onclick="TierSelect(3)">T4</button>
+            <button class="tier_container" onclick="TierSelect(4)">T5</button>
+        </div>
+        
+        
+        
+        <div class = 'rarity'>
+            <button class = "rarity_normal" onclick="RaritySelect(0)">Normal</button>
+            <button class = "rarity_rare" onclick="RaritySelect(1)">Raro</button>
+            <button class = "rarity_epic" onclick="RaritySelect(2)">Épico</button>
+            <button class = "rarity_legend" onclick="RaritySelect(3)">Lendário</button>
+        </div>
+
+        <div class="lists">
+            <div class = 'list1'>
+                <label >Status Primário: </label>
+                <select class="primary_stats" onchange="PrimarySelect(this.value, this.options[this.selectedIndex].text);">
+                <option value="0">-</option>
+                </select>
+                
+                <label>Refino: </label>
+                <select class = 'enhancement' onclick="EnhancementSelect(this.value);">
+                    <option value = 'default'>-</option>
+                </select>
+            </div>
+
+            <div class = 'list2'>
+                <label>Status Secundário: </label>
+                <select class="secondary_stats" onchange="SecondarySelect(this.value, this.options[this.selectedIndex].text)">
+                    <option value="0">-</option>
+                </select>
+                <label>2° Refino:</label>
+                <select class = 'secondary_enhancement' onchange="SecondEnhancementSelect(this.value, this.options[this.selectedIndex].text)">
+                    <option value = "default">-</option>
+                </select>
+            </div>    
+        </div>
+        <div class = 'calculation'>
+            <button class = 'calculate' onclick="CheckError()">Calcular</button>
+            <button class = 'reset' onclick="Reset()">Resetar</button>
+
+        </div>
+        <div id = 'results'><!--Results will show up here--></div>
+
+        </div>
+    </div>
+    <div class="end">
+        <p id="comment0">
+            O 2º Refino indica a quantidade de vezes que a propriedade secundária foi melhorada.
+        </p>
+        <p>
+            O valor verde entre parênteses indica o aumento de status em relação ao valor base.
+        </p>
+        <p id="comment1">
+            Calculadora feita por Aresius. Para feedback, reporte de bugs, sugestões, discussão de dados etc você pode me
+            encontrar no Discord: 
+            <span class="me">aresius4407</span>.
+        </p>
+        <p id="comment2">
+            Confira também minhas outras calculadoras <a class="link_calc"
+                href="https://linktr.ee/thearesius" target="_blank"
+                rel="noopener noreferrer">aqui</a>.
+        </p>
+    </div>
+</body>
+<footer>
+    <div id="update"> v.1.0.1 - Última atualização: 25 de Julho de 2023.</div>
+  </footer>
