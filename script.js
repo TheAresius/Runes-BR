@@ -31,6 +31,7 @@ function FormatSelect(value, image, image_path) {
     stats2_string = null
     rune_format = value
     second_enhancement_string = 0
+    enhancement2 = 1
 
 
     // resets the enhanement lists
