@@ -124,6 +124,8 @@ function EnhancementSelect(value) {
 function PrimarySelect(list_value, stats) {
     primary = list_value
     stats1_string = stats
+    enhancement_list2.empty()
+    stats2_string = null
 
     // removes the 'primary stats' and value from the list of 'secondary stats'
     excluded_index = string_properties.indexOf(stats);
@@ -131,11 +133,15 @@ function PrimarySelect(list_value, stats) {
     new_secondary_stats = second_list.filter((value, index) => index !== excluded_index);
     
     // creates the dropdown list for the 'secondary stats' based on the selected stats of the 'primary stats'
-    var dropdown2 = $(".secondary_stats");
+    dropdown2 = $(".secondary_stats");
     dropdown2.empty().append('<option value="0">Selecione uma propriedade</option>');
     for (var i = 0; i < new_secondary_strings.length; i++) {
         var option2 = $('<option>').text(new_secondary_strings[i]).val(new_secondary_stats[i]);
         dropdown2.append(option2);
+    }
+    for (var i = 0; i<second_enhancement.length; i++){
+        var option2 = $('<option>').text(i).val(second_enhancement[i])
+        enhancement_list2.append(option2)
     }
     return primary, new_secondary_strings, new_secondary_stats, stats1_string
 }
