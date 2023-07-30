@@ -4,6 +4,11 @@
     src: url('fonts/NotoSans.ttf') format('truetype');
   }
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 12pt;
@@ -226,7 +231,6 @@ body {
   align-items: center;
   grid-template-columns: repeat(2, 130px);
   grid-template-rows: repeat(2,28px);
-  
 }
 .list2{
   display:grid;
@@ -305,11 +309,13 @@ a.link_calc:active{
   color: #00f7ff;
 }
 footer {
-  display: flex;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 25px;
+  overflow: hidden;
   justify-content: space-between;
   font-family: "Montserrat", sans-serif;
   font-size: 10pt;
   margin-left: 4px;
-  position: absolute;
-  bottom:4px;
 }
