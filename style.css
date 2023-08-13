@@ -309,13 +309,14 @@ a.link_calc:active{
   color: #00f7ff;
 }
 footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 25px;
-  overflow: hidden;
+  display: flex;
   justify-content: space-between;
   font-family: "Montserrat", sans-serif;
   font-size: 10pt;
+  margin-left: 4px;
+  position: absolute;
+  bottom:4px;
+}
+div#update {
   margin-left: 4px;
 }
