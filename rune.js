@@ -40,7 +40,7 @@ var legend = [0.33, 0.44, 0.55, 0.66, 0.77]
 var tier_rarity_mult = [normal, rare, epic, legend]
 
 var second_mult = [0.33, 0.44, 0.55, 0.66, 0.77]
-var first_enhancement = [1.000, 1.026, 1.052, 1.078, 1.104, 1.130, 1.156, 1.182, 1.280, 1.234, 1.300]
+var first_enhancement = [1.000, 1.026, 1.052, 1.078, 1.104, 1.130, 1.156, 1.182, 1.208, 1.234, 1.300]
 var second_enhancement = [1.000, 1.150, 1.300]
 
 // number of dark stones for enhanement
